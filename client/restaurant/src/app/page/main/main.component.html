@@ -1,0 +1,38 @@
+<div class="naslov">
+    <h1>Trattoria La Campana</h1>
+    <p>...perfect place to grab a quick bite and wash it down with some local wine...</p>
+</div>
+<br>
+
+<div class="row row1a">
+    <div class="col-6">
+        <app-filter-items (setNameFilter)="filterItems($event)"></app-filter-items>
+    </div>
+    <div class="col-6 ms-auto">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <button type="button" class="btn btn-outline-secondary" aria-label="Previous"
+                        (click)="decrementPage()">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only"></span>
+                    </button>
+                </li>
+                <li class="page-item">
+                    <button type="button" class="btn btn-outline-secondary" aria-label="Next" (click)="incrementPage()">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only"></span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="row container1">
+<div [ngClass]="loggedIn === true ? 'col-md-7 tabela2' : 'col-md-12 tabela1'">
+    <app-item-list [items]="items" [loggedIn]="loggedIn" (itemDeleted)="getItems()"></app-item-list>
+</div>
+<div *ngIf="loggedIn" class="col-md-5">
+    <app-add-item (newItemAdded)="getItems()"></app-add-item>
+</div>
+</div>

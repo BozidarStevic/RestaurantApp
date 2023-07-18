@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/main">Trattoria</a>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/main">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/main">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/main">Contact</a>
+                </li>
+            </ul>
+            <span class="navbar-text  ms-auto">
+                <button class="btn btn-outline-secondary" type="button" *ngIf="!loggedIn" [routerLink]="['/login']">log in</button>
+                <button class="btn btn-outline-secondary" type="button" *ngIf="loggedIn" (click)="logout()">log out</button>
+            </span>
+        </div>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>

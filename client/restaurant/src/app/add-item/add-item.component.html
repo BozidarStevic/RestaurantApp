@@ -1,0 +1,22 @@
+<form (ngSubmit)="addItem()" class="bg-light">
+
+    <div class="form-group">
+        <label for="input-name">name</label><br>
+        <input name="input-name" class="form-control" id="input-name" [(ngModel)]="newItem.name" /><br />
+    </div>
+
+    <div class="form-group">
+        <label for="input-category">category</label>
+        <select name="input-category" id="input-category" [(ngModel)]="newItem.category" class="form-control">
+      <option *ngFor="let c of categories" [ngValue]="c">{{c.name}}</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+        <label for="input-price">Price</label>
+        <input name="input-price" class="form-control" id="input-price" [(ngModel)]="newItem.price" /><br />
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">save</button>
+
+</form>

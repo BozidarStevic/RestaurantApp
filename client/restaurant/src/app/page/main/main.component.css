@@ -1,0 +1,20 @@
+.naslov {
+    background-color: #e6e5e3;
+    margin-left: 95px;
+    margin-right: 95px;
+    padding: 30px;
+    padding-top: 20px;
+    padding-left: 90px;
+}
+
+.row1a {
+    margin-left: 95px;
+}
+
+.pagination {
+    float: right;
+    margin-right: 95px;
+}
+.container1 {
+    padding: 0px 95px;
+}

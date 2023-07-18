@@ -1,0 +1,27 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th colspan="7" scope="col">name</th>
+            <th scope="col">category</th>
+            <th scope="col">price</th>
+            <th *ngIf="loggedIn" scope="col">action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items;">
+            <td>{{item.name}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{item.category.name}}</td>
+            <td>{{item.price}}</td>
+            <td *ngIf="loggedIn">
+                <button type="button" class="btn btn-outline-secondary bg-danger text-white" (click)="deleteItem(item.id)">delete</button>
+                <button type="button" class="btn btn-outline-secondary" (click)="editItem(item)">update</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
